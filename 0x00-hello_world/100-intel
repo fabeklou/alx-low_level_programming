@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -c -m $CFILE | tr c s
+gcc -S -m $CFILE | tr c s
