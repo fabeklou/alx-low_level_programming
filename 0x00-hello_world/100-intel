@@ -1,2 +1,2 @@
 #!/bin/bash
-gcc -S -m $CFILE | tr c s
+gcc -masm=att $CFILE | tr c s
