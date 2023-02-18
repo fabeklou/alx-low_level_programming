@@ -23,15 +23,15 @@ int main(void)
 				{
 					if (i + j < k + l)
 					{
-						putchar(i);
-						putchar(j);
+					putchar(i);
+					putchar(j);
+					putchar(' ');
+					putchar(k);
+					putchar(l);
+					if (!(i + j == '9' + '8' && k + l == '9' + '9'))
+					{
+						putchar(',');
 						putchar(' ');
-						putchar(k);
-						putchar(l);
-						if (!(i + j == '98' && k + l == '99'))
-						{
-							putchar(',');
-							putchar(' ');
 						}
 					}
 				}
