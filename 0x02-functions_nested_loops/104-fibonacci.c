@@ -14,7 +14,7 @@ int main(void)
 	 * @temp: temporary variable, will help to switch values
 	 */
 	int  i;
-	unsigned long long int acc, next, temp;
+	unsigned long int acc, next, temp;
 
 	for (i = 1, acc = 1, next = 0, temp = 0; i <= 98; i++)
 	{
@@ -22,7 +22,7 @@ int main(void)
 		next = acc;
 		acc += temp;
 
-		printf("%ld", acc);
+		printf("%lu", acc);
 
 		if (i != 98)
 			printf(", ");
