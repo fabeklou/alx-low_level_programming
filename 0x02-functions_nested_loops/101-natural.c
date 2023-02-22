@@ -5,7 +5,7 @@
  *
  * Return: Void
  */
-void main(void)
+int main(void)
 {
 	/**
 	 * @i: loop controling variable.
@@ -26,4 +26,5 @@ void main(void)
 	}
 
 	printf("%d\n", sum);
+	return (0);
 }
