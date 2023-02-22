@@ -34,7 +34,7 @@ void jack_bauer(void)
 			else
 			{
 				_putchar('0' + j / 10);
-				_puchar('0' + j % 10);
+				_putchar('0' + j % 10);
 			}
 
 			_putchar('\n');
