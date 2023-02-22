@@ -26,7 +26,7 @@ int main(void)
 		if ((acc % 2) == 0)
 			sum += acc;
 	}
-	printf("%ld", sum);
+	printf("%ld\n", sum);
 
 	return (0);
 }
