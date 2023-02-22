@@ -5,23 +5,19 @@
  *
  * @n: The number to be used
  *
- * Return: the value of the last digit
+ * Return: the value of the last digit of a number
  */
 int print_last_digit(int n)
 {
-	int temp;
+	int last_digit;
 
-	if (n == 0)
+	last_digit = n % 10;
+
+	if (last_digit < 0)
 	{
-		return (0);
+		last_digit *= -1;
 	}
-	else if (n < 0)
-	{
-		temp = n * (-1);
-		return (temp % 10);
-	}
-	else
-	{
-		return (n % 10);
-	}
+	putchar('0' + last_digit);
+
+	return (last_digit);
 }
