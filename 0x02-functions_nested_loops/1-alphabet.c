@@ -1,11 +1,11 @@
-#define PRINT_ALPHABET "print_alphabet.h"
+#include "print_alphabet.h"
 
 /**
- * main - Entry point
+ * print_alphabet - Entry point
  *
  * Description: prints the alphabet in lowercase, followed by a new line.
  *
- * Return: Always 0 (Success)
+ * Return: void (Success)
  */
 void print_alphabet(void)
 {
