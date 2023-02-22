@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAX_VAL 12200160415121876738
+#define MAX_VAL 10610209857723
 
 /**
  * main - entry point (prints the first 98 Fibonacci numbers)
