@@ -24,7 +24,7 @@ int main(void)
 		printf("%d", acc);
 
 		if (i != 50)
-			puts(", ");
+			printf(", ");
 	}
 
 	return (0);
