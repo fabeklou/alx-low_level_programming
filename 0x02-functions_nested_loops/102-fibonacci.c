@@ -22,7 +22,7 @@ int main(void)
 		next = acc;
 		acc += temp;
 
-		printf("%d", acc);
+		printf("%ld", acc);
 
 		if (i != 50)
 			printf(", ");
