@@ -1,9 +1,11 @@
 #include <stdio.h>
 
 /**
- * natural - computes and prints the sum of all the multiples of 3 or 5
+ * main - entry point
  *
- * Return: Void
+ * Description : computes and prints the sum of all the multiples of 3 or 5
+ *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
