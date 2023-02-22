@@ -1,33 +1,23 @@
-#include <stdio.h>
-
+#inlude <stdio.h>
 /**
- * main - entry point (prints the first 98 Fibonacci numbers)
- *
- * Return: Always 0 (Success)
+ * main - main block
+ * Description: computes and prints even  number < 4,000,000
+ * 5 below 1024 (excluded), followed by a new line
+ * Return: 0
  */
 int main(void)
 {
-	/**
-	 * @i: loop control variable
-	 * @acc: hold the sum of the two previous numbers
-	 * @next: hold the next number to be add
-	 * @temp: temporary variable, will help to switch values
-	 */
-	int  i;
-	unsigned long int acc, next, temp;
+	int a = 0, b = 1, next = 0;
+	int sum = 0;
 
-	for (i = 1, acc = 1, next = 0, temp = 0; i <= 98; i++)
+	while (next < 4000000)
 	{
-		temp = next;
-		next = acc;
-		acc += temp;
-
-		printf("%lu", acc);
-
-		if (i != 98)
-			printf(", ");
+		next = a + b;
+		a = b;
+		b = next;
+		if (next % 2 == 0)
+			sum += next;
 	}
-	puts("");
-
+	printf("%i\n", sum);
 	return (0);
-}
+}c
