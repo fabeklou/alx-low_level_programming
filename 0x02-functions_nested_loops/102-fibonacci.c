@@ -13,7 +13,8 @@ int main(void)
 	 * @next: hold the next number to be add
 	 * @temp: temporary variable, will help to share values
 	 */
-	int  i, acc, next, temp;
+	int  i; 
+	long unsigned int acc, next, temp;
 
 	for (i = 1, acc = 1, next = 0, temp = 0; i <= 50; i++)
 	{
