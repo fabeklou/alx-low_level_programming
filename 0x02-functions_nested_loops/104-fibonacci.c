@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <sdio.h>
 
 /**
  * main - entry point (prints the first 98 Fibonacci numbers)
@@ -16,13 +16,29 @@ int main(void)
 	int  i;
 	unsigned long int acc, next, temp;
 
+	/**
+	 * @part_1: hold the first half of a long long number
+	 * @part_2: hold the second half of a long long number
+	 */
+	unsigned long int part_1, part_2;
+
 	for (i = 1, acc = 1, next = 0, temp = 0; i <= 98; i++)
 	{
 		temp = next;
 		next = acc;
 		acc += temp;
 
-		printf("%lu", acc);
+		if (acc <= 12200160415121876738)
+		{
+			printf("%lu", acc);
+		}
+		else
+		{
+			part_1 = (unsigned long int)(acc / 1000000000);
+			part_2 = (unsigned long int)(((acc / 1000000000) % 1) * 1000000000);
+			printf("%lu%lu", part_1, part_2);
+		}
+
 
 		if (i != 98)
 			printf(", ");
