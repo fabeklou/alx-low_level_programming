@@ -7,12 +7,13 @@
  */
 void times_table(void)
 {
-	int i, n, res;
+	int i, n;
 
 	for (n = 0; n <= 9; n++)
 	{
 		for (i = 0; i <= 9; i++)
 		{
+			int res;
 			res = i * n;
 
 			if (res <= 9)
@@ -31,12 +32,12 @@ void times_table(void)
 
 				if (res > 9)
 				{
-					_putchar(' ');
+					_putchar('.');
 				}
 				else
 				{
-					_putchar(' ');
-					_putchar(' ');
+					_putchar('.');
+					_putchar('.');
 				}
 			}
 		}
