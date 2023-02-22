@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#define MAX_VAL 12200160415121876738
+
 /**
  * main - entry point (prints the first 98 Fibonacci numbers)
  *
@@ -28,7 +30,7 @@ int main(void)
 		next = acc;
 		acc += temp;
 
-		if (acc <= 12200160415121876738)
+		if (acc <= MAX_VAL)
 		{
 			printf("%lu", acc);
 		}
