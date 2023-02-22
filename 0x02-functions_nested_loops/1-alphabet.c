@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define PRINT_ALPHABET "print_alphabet"
+#define PRINT_ALPHABET "print_alphabet.h"
 
 /**
  * main - Entry point
