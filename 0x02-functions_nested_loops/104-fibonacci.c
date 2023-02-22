@@ -1,4 +1,4 @@
-#include <sdio.h>
+#include <stdio.h>
 
 /**
  * main - entry point (prints the first 98 Fibonacci numbers)
