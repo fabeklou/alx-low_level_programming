@@ -1,5 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
 #define PRINT_ALPHABET "print_alphabet.h"
 
 /**
@@ -9,7 +7,7 @@
  *
  * Return: Always 0 (Success)
  */
-int main(void)
+void print_alphabet(void)
 {
 	int i;
 
@@ -18,5 +16,5 @@ int main(void)
 
 	putchar('\n');
 
-	return (0);
+	return;
 }
