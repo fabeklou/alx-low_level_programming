@@ -18,10 +18,10 @@ void print_to_98(int n)
 		}
 		else if (n < (-9))
 		{
-			_puchar('-');
+			_putchar('-');
 			_putchar('0' + (n / 10));
 			_putchar('0' + (n % 10));
-
+		}
 		else
 		{
 			_putchar('0' + n);
