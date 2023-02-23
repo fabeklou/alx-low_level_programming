@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-#define NUM 612852475143
-
 /**
  * main - prints the largest prime factor of the number 612852475143
  *
@@ -9,24 +7,29 @@
  */
 int main(void)
 {
-	int i, max;
-	float res;
+	int i;
+
+	long max, num;
+	double res;
+
+	num = 612852475143;
 
 	i = 2;
+	max = num;
 
-	while (i <= 200)
+	while (i <= 782848)
 	{
-		res = (float)NUM / i;
+		res = (double)max / i;
 
-		if ((int)res == res)
+		if (((long)res == res) && (res != 0))
 		{
-			max = res;
+			max = (long)res;
 			continue;
 		}
 		i++;
 	}
 
-	printf("%d\n", max);
+	printf("%ld\n", max);
 
 	return (0);
 }
