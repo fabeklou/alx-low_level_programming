@@ -9,35 +9,22 @@
  */
 void print_number(int n)
 {
-	int i;
+	unsigned int n_copy;
 
-	if (n < -9)
+	if (n < 0)
 	{
-		i = -n;
-		_putchar('-');
-		_putchar('0' + (i / 10));
-		_putchar('0' + (i % 10));
+		n_copy = n * (-1);
+		_putchar(45);
 	}
-	else if (n >= 0 && n <= 9)
+	else
 	{
-		_putchar('0' + n);
+		n_copy = n;
 	}
-	else if (n > 999)
+
+	if (n_copy > 9)
 	{
-		_putchar('0' + (n / 1000));
-		_putchar('0' + ((n / 100) % 10));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
+		print_number((n_copy / 10));
 	}
-	else if (n > 99)
-	{
-		_putchar('0' + (n / 100));
-		_putchar('0' + ((n / 10) % 10));
-		_putchar('0' + (n % 10));
-	}
-	else if (n > 9)
-	{
-		_putchar('0' + (n / 10));
-		_putchar('0' + (n % 10));
-	}
+
+	_putchar(n_copy % 10 + '0');
 }
