@@ -25,10 +25,13 @@ int main(void)
 		}
 		else
 		{
-			printf("%i", i);
+			printf("%d", i);
 		}
 
-		putchar(' ');
+		if (i != 100)
+		{
+			putchar(' ');
+		}
 	}
 	puts("");
 	return (0);
