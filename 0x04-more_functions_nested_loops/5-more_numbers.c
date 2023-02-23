@@ -32,7 +32,7 @@ void more_numbers(void)
 					break;
 				}
 			}
-			else 
+			else
 			{
 				j++;
 			}
