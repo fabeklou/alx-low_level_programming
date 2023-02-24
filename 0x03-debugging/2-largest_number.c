@@ -10,28 +10,13 @@
 int largest_number(int a, int b, int c)
 {
 	/*
-	 * @inter: intermediate variable 
+	 * @inter: intermediate variable
 	 * (will hold the provisional largest integer)
 	 */
 	int inter, largest;
 
-	if (a > b)
-	{
-		inter = a;
-	}
-	else
-	{
-		inter = b;
-	}
-
-	if (inter > c)
-	{
-		largest = inter;
-	}
-	else
-	{
-		largest = c;
-	}
+	inter = (a > b) ? a : b;
+	largest = (inter > c) ? inter : c;
 
 	return (largest);
 }
