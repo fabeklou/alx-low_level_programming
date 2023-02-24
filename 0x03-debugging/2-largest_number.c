@@ -5,13 +5,14 @@
  * @a: first integer
  * @b: second integer
  * @c: third integer
- * Return: largest number
+ * Return: the largest number
  */
 int largest_number(int a, int b, int c)
 {
-	/* 
-	 * @inter: intermediate variable (will hold the provisional largest integer)
-	 * */
+	/*
+	 * @inter: intermediate variable 
+	 * (will hold the provisional largest integer)
+	 */
 	int inter, largest;
 
 	if (a > b)
