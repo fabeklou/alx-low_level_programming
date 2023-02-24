@@ -10,43 +10,45 @@
 
 int largest_number(int a, int b, int c)
 {
-	int largest;
-
 	if (a > b)
 	{
 		if (a > c)
-			largest = a;
+			return (a);
 		else
-			largest = b;
+			return (b);
 	}
 	else if (a > c)
 	{
 		if (a > b)
-			largest = a;
+			return (a);
 		else
-			largest = b;
+			return (b);
 	}
 	else if (b > a)
 	{
 		if (b > c)
-			largest = b;
+			return (b);
 		else
-			largest = c;
+			return (c);
 	}
 	else if (b > c)
 	{
 		if (b > a)
-			largest = b;
+			return (b);
 		else
-			largest = a;
+			return (a);
 	}
 	else if (c > a)
 	{
 		if (c > b)
-			largest = c;
+			return (c);
 		else
-			largest = b;
+			return (b);
 	}
-
-	return (largest);
+	else if (c > b)
+		if (c > a)
+			return (c);
+		else
+			return (a);
+	}
 }
