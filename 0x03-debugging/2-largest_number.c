@@ -13,10 +13,26 @@ int largest_number(int a, int b, int c)
 	 * @inter: intermediate variable
 	 * (will hold the provisional largest integer)
 	 */
-	int inter, largest;
+	int inter = 0;
+	int largest = 0;
 
-	inter = (a > b) ? a : b;
-	largest = (inter > c) ? inter : c;
+	if (a > b)
+	{
+		inter = a;
+	}
+	else
+	{
+		inter = b;
+	}
+
+	if (inter > c)
+	{
+		largest = inter;
+	}
+	else
+	{
+		largest = c;
+	}
 
 	return (largest);
 }
