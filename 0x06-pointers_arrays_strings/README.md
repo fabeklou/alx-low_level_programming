@@ -1,7 +1,7 @@
 # 0x06. C - More pointers, arrays and strings
 
 <p align="center">
-	<img src="https://intranet.alxswe.com/images/contents/low_level_programming/projects/happy-clapping.gif">
+	<img size="400" src="https://intranet.alxswe.com/images/contents/low_level_programming/projects/happy-clapping.gif">
 </p>
 
 ## Learning Objectives
