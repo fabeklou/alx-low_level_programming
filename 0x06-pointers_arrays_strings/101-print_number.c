@@ -21,7 +21,7 @@ void print_number(int n)
 		n_copy = n;
 	}
 
-	if (n > 9)
+	if (n_copy > 9)
 	{
 		print_number((n_copy / 10));
 	}
