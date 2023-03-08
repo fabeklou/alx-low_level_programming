@@ -4,7 +4,9 @@
 	<img size="400" src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/219/a88.jpg">
 </p>
 
-## At the end of this project, you are expected to be able to [explain to anyone](https://intranet.alxswe.com/rltoken/Uip4OgfLQdGP921TAMtCHQ), <b>without the help of Google:</b>
+## Learning Objectives
+
+At the end of this project, you are expected to be able to [explain to anyone](https://intranet.alxswe.com/rltoken/Uip4OgfLQdGP921TAMtCHQ), <b>without the help of Google:</b>
 
 ## General
 
