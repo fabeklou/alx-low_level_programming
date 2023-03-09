@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _prime_num_ckecker - verify if the given number has more than two
+ * _prime_num_checker - verify if the given number has more than two
  * 2 divisor
  *
  * @n: the value to be checked
