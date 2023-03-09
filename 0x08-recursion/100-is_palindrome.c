@@ -1,24 +1,40 @@
 #include "main.h"
 
 /**
- * _palindrome_checker - verify if the given number is the same
+ * _str_len - return the length of the given string
+ *
+ * @s: the string
+ * @len: the len of the given string
+ *
+ * Return: the length of the given string
+ */
+int _str_len(char *s, int len)
+{
+	if (s[0])
+		len++;
+	if (!(s[0]))
+		return (len);
+
+	return (_str_len(s + 1, len));
+}
+
+/**
+ * _palindrome_checker - verify if the given string is the same
  * whether read forwards or backwards
  *
- * @s: the string to be checked
- * @n: the length of the given string
+ * @s_f: the string that will be read forwards
+ * @s_b: the string that will be read backwards
  *
- * Return: (1) if @s is a palindrome, (0) otherwise
+ * Return: (1) if the given string is a palindrome (0) otherwise
  */
-int _palindrome_checker(char *s, int n)
+int _palindrome_checker(char *s_f, char *s_b, int len)
 {
-	int i;
+	if (s_f[0] != s_b[len])
+		return (0);
+	if (len == 0)
+		return (1);
 
-	for (i  = 0; s[i] && s[n]; i++, n--)
-	{
-		if (s[i] != s[n])
-			return (0);
-	}
-	return (1);
+	return (_palindrome_checker(s_f + 1, s_b, len - 1));
 }
 
 
@@ -31,11 +47,12 @@ int _palindrome_checker(char *s, int n)
  */
 int is_palindrome(char *s)
 {
-	int i = 0;
+	int len;
 
-	while (s[i])
-	{
-		i++;
-	}
-	return (_palindrome_checker(s, i - 1));
+	if (!(s[0]))
+		return (0);
+
+	len = _str_len(s, 0);
+
+	return (_palindrome_checker(s, s, len - 1));
 }
