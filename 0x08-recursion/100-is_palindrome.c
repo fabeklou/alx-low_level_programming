@@ -24,6 +24,7 @@ int _str_len(char *s, int len)
  *
  * @s_f: the string that will be read forwards
  * @s_b: the string that will be read backwards
+ * @len: the length of the given string
  *
  * Return: (1) if the given string is a palindrome (0) otherwise
  */
