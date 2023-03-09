@@ -12,14 +12,12 @@
  */
 int _sqrt_verify(int i, int n)
 {
-	if ((i * i) != n)
-	{
-		if (i == n)
-			return (-1);
+	if (n == (i * i))
+		return (i);
+	if ((i * i) > n)
+		return (-1);
 
-		return (_sqrt_verify(i + 1, n));
-	}
-	return (i);
+	return (_sqrt_verify(i + 1, n));
 }
 
 
@@ -37,11 +35,15 @@ int _sqrt_recursion(int n)
 
 	if (n < 0)
 		return (-1);
+	if (n == 0)
+		return (0);
 
-	if (n >= 0 && n < 100)
+	if (n > 0 && n < 100)
 		i = 1;
 	if (n >= 100 && n <= 1000)
 		i = 10;
+	if (n > 1000 && n <= 10000)
+		i = 30;
 
 	return (_sqrt_verify(i, n));
 }
