@@ -14,7 +14,7 @@ int _sqrt_verify(int i, int n)
 {
 	if (n == (i * i))
 		return (i);
-	if ((i * i) > n)
+	if (n < (i * i))
 		return (-1);
 
 	return (_sqrt_verify(i + 1, n));
