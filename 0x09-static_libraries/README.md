@@ -1,7 +1,7 @@
 # 0x09. C - Static libraries
 
 <p align="center">
-	<src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*U1-XocU-OVxGX6vfUidv6A.png" img>
+	<img src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*U1-XocU-OVxGX6vfUidv6A.png">
 </p>
 
 ## Learning Objectives
