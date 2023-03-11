@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - Entry point
@@ -30,7 +31,7 @@ int main(int argc, char *argv[])
 			{
 				sum += argv_el;
 			}
-			else
+			else if (!(isdigit(argv_el)))
 			{
 				puts("Error");
 				return (1);
