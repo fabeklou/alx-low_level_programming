@@ -12,7 +12,7 @@ void free_grid(int **grid, int height)
 {
 	if (grid == NULL)
 	{
-		exit(EXIT_SUCCESS);
+		exit(0);
 	}
 	else
 	{
