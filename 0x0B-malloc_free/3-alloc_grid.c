@@ -11,15 +11,24 @@
  */
 int **alloc_grid(int width, int height)
 {
+	int  i = 0;
 	int **grid = NULL;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	grid = (int *)calloc(height, (int *)calloc(width, sizeof(int)));
+	grid = (int **)calloc(height, sizeof(int *));
 
 	if (grid == NULL)
 		return (NULL);
+
+	while (i < height)
+	{
+		grid[i] = (int *)calloc(width, sizeof(int));
+		if (grid[i] == NULL)
+			return (NULL);
+		i++;
+	}
 
 	return (grid);
 }
