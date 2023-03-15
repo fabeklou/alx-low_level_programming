@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 /**
  * main - Entry point
  *
- * Description - adds two positive numbers and print the result,
+ * Description - adds multiple positive numbers and print the result,
  * followed by a new line
  *
  * @argc: argument count (number of command-line arguments)
@@ -15,30 +14,26 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 1, sum = 0, argv_el;
+	int i, j, sum = 0;
 
 	if (argc == 1)
 	{
-		printf("0\n");
+		puts("0");
+		return (0);
 	}
-	else
-	{
-		while (i < argc)
-		{
-			argv_el = atoi(argv[i]);
 
-			if (argv_el != 0)
-			{
-				sum += argv_el;
-			}
-			else if (!(isdigit(argv_el)))
+	for (i = 1; i < argc; i++)
+	{
+		for (j = 0; argv[i][j]; j++)
+		{
+			if (!(argv[i][j] >= 48 && argv[i][j] <= 57))
 			{
 				puts("Error");
 				return (1);
 			}
-			i++;
 		}
-		printf("%d\n", sum);
+		sum += atoi(argv[i]);
 	}
+	printf("%d\n", sum);
 	return (0);
 }
