@@ -1,5 +1,4 @@
-#include "main.h"
-#include <stdio.h>
+#include "../main.h"
 
 /**
  * main - check the code
@@ -10,13 +9,13 @@ int main(void)
 {
     int r;
 
-    r = is_palindrome("level");
+    r = factorial(1);
     printf("%d\n", r);
-    r = is_palindrome("redder");
+    r = factorial(5);
     printf("%d\n", r);
-    r = is_palindrome("test");
+    r = factorial(10);
     printf("%d\n", r);
-    r = is_palindrome("step on no pets");
+    r = factorial(-1024);
     printf("%d\n", r);
     return (0);
 }
