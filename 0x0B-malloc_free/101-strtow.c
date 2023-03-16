@@ -71,7 +71,13 @@ char **_allocate_space(int w_count, int *words_len)
 	{
 		str_split[i] = (char *)calloc(words_len[i] + 1, sizeof(char));
 		if (str_split[i] == NULL)
+		{
+			for (; i >= 0; i--)
+				free(str_split[i]);
+
+			free(str_split);
 			return (NULL);
+		}
 	}
 
 	return (str_split);
