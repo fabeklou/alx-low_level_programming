@@ -42,7 +42,7 @@ void _char_by_word(char *str, int *words_len)
 	{
 		if ((str[i] != ' ') && ((i == 0) || (str[i - 1] == ' ')))
 		{
-			for (; str[i] && (str[i] != ' '); i++)
+			for (; str[i + 1] && (str[i] != ' '); i++)
 				c_count++;
 			words_len[index++] = c_count;
 			c_count = 0;
@@ -62,14 +62,14 @@ void _char_by_word(char *str, int *words_len)
 char **_allocate_space(int w_count, int *words_len)
 {
 	int i;
-	char **str_split = (char **)calloc(w_count + 1, sizeof(char *));
+	char **str_split = (char **)malloc(sizeof(char *) * (w_count + 1));
 
 	if (str_split == NULL)
 		return (NULL);
 
 	for (i = 0; i < w_count; i++)
 	{
-		str_split[i] = (char *)calloc(words_len[i] + 1, sizeof(char));
+		str_split[i] = (char *)malloc(sizeof(char) * (words_len[i] + 1));
 		if (str_split[i] == NULL)
 		{
 			for (; i >= 0; i--)
@@ -102,7 +102,7 @@ char **strtow(char *str)
 	if (str == NULL || w_count == 0)
 		return (NULL);
 
-	words_len = (int *)malloc(w_count * sizeof(int));
+	words_len = (int *)malloc(sizeof(int) * w_count);
 	if (words_len == NULL)
 		return (NULL);
 	_char_by_word(str, words_len);
