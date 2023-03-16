@@ -31,7 +31,6 @@ int _word_count(char *str)
  *
  * @str: the string to b
  * @words_len: pointer to an array of inetger
- * @w_count: number of words
  *
  * Return: nothing
  */
@@ -65,12 +64,9 @@ char **_allocate_space(int w_count, int *words_len)
 	int i;
 	char **str_split = (char **)calloc(w_count + 1, sizeof(char *));
 
-	for (i = 0; i < w_count + 1; i++)
+	for (i = 0; i < w_count; i++)
 	{
-		if (i == w_count)
-			str_split[i] = (char *)calloc(1, sizeof(char));
-		else
-			str_split[i] = (char *)calloc(words_len[i] + 1, sizeof(char));
+		str_split[i] = (char *)calloc(words_len[i] + 1, sizeof(char));
 	}
 
 	return (str_split);
