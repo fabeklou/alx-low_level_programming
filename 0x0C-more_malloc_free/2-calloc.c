@@ -29,7 +29,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 		if (p[i] == NULL)
 		{
-			for (; i < nmemb; i--)
+			for (; i > 0; i--)
 				free(p[i]);
 			free(p);
 			return (NULL);
