@@ -19,5 +19,11 @@ struct dog
 		char *owner;
 };
 
+
+/* Function Prototypes */
+
+void init_dog(struct dog *d, char *name, float age, char *owner);
+
+
 /* End of _DOG_ */
 #endif
