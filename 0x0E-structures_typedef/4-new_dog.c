@@ -12,6 +12,7 @@
 int _str_count(char *str)
 {
 	int len = 0;
+
 	while (str[len])
 		len++;
 	return (len);
@@ -28,6 +29,7 @@ int _str_count(char *str)
 char *_str_cpy(char *str_dest, char *str_src)
 {
 	int i;
+
 	for  (i = 0; str_src[i]; i++)
 		str_dest[i] = str_src[i];
 
