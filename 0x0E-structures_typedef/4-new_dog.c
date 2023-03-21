@@ -3,7 +3,7 @@
 
 
 /**
- * _str_len - counts the number of characters in a string
+ * _str_count - counts the number of characters in a string
  *
  * @str: the string to count
  *
