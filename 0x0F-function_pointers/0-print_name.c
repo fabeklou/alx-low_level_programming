@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 /**
  * print_name - prints a name
  *
@@ -13,6 +15,6 @@ void print_name(char *name, void (*f)(char *))
 	while (name[i])
 		i++;
 
-	if (i > 0)
+	if (i > 0 && f != NULL)
 		f(name);
 }
