@@ -19,18 +19,18 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
+	if (((argv[2][0] == '%') || (argv[2][0] == '/')) && num_2 == 0)
+	{
+		puts("Error");
+		exit(100);
+	}
+
 	ptr_opf = get_op_func(argv[2]);
 
 	if (ptr_opf == NULL)
 	{
 		puts("Error");
 		exit(99);
-	}
-
-	if ((!(strcmp(argv[2], "/")) || !(strcmp(argv[2], "%"))) && num_2 == 0)
-	{
-		puts("Error");
-		exit(100);
 	}
 
 	printf("%d\n", ptr_opf(num_1, num_2));
