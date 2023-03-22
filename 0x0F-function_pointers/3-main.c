@@ -10,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int num_1 = atoi(argv[1]), num_2 = atoi(argv[3]);
+	int result, num_1, num_2;
 	int (*ptr_opf)(int, int);
 
 	if (argc != 4)
@@ -19,7 +19,10 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (((argv[2][0] == '%') || (argv[2][0] == '/')) && num_2 == 0)
+	num_1 = atoi(argv[1]);
+	num_2 = atoi(argv[3]);
+
+	if ((argv[2][0] == '%' || argv[2][0] == '/') && num_2 == 0)
 	{
 		puts("Error");
 		exit(100);
@@ -33,7 +36,9 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	printf("%d\n", ptr_opf(num_1, num_2));
+	result = ptr_opf(num_1, num_2);
+
+	printf("%d\n", result);
 
 	return (0);
 }
