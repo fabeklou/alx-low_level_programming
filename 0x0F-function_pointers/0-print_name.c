@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 /**
  * print_name - prints a name
  *
@@ -10,5 +8,11 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	int i = 0;
+
+	while (name[i])
+		i++;
+
+	if (i > 0)
+		f(name);
 }
