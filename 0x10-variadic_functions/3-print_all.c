@@ -17,7 +17,7 @@ void print_char(va_list args)
 
 
 /**
-  * print_integer - prints an integer
+  * print_int - prints an integer
   *
   * @args: list of variadic arguments
   *
