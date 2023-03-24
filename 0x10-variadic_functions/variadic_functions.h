@@ -10,7 +10,7 @@ void print_strings(const char *separator, const unsigned int n, ...);
 /**
  * struct ft_dt - struct ft_dt
  *
- * @identifier: The conversion specifier
+ * @id: The conversion specifier
  * @f: The function associated
  */
 typedef struct ft_dt
