@@ -1,5 +1,4 @@
 #include <string.h>
-#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -13,7 +12,7 @@ int _str_len(const char *str)
 {
 	int char_count = 0;
 
-	while (*str)
+	while (*str++)
 		char_count++;
 
 	return (char_count);
