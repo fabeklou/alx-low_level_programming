@@ -6,7 +6,7 @@ global  main
 extern  printf
 
 section .data
-    format      db 'Hello, Holberton!', 0xA, 0
+    format      db 'Hello, Holberton', 0xA, 0
 
 section .bss
 
