@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * find_starting_point - finds and returns a pointer to the
@@ -61,7 +61,7 @@ size_t print_listint_safe(const listint_t *head)
 	const listint_t *starting_point;
 
 	if (!head)
-		exit(98);
+		return (0);
 
 	starting_point = find_loop(head);
 
@@ -70,8 +70,8 @@ size_t print_listint_safe(const listint_t *head)
 		while (st_point_found < 2)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
-			head = head->next;
 			node_count++;
+			head = head->next;
 			if (head == starting_point)
 			{
 				st_point_found++;
@@ -89,6 +89,5 @@ size_t print_listint_safe(const listint_t *head)
 			node_count++;
 		}
 	}
-
 	return (node_count);
 }
