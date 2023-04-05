@@ -2,28 +2,6 @@
 #include <stdio.h>
 
 /**
- * find_starting_point - finds and returns a pointer to the
- * node at the origin of the loop
- *
- * @head: pointer to the head node
- * @p: pointer to the position node
- *
- * Return: a pointer to the node at the origin of the loop
- */
-const listint_t *find_starting_point(const listint_t *p, const listint_t *head)
-{
-	const listint_t *q = head;
-
-	while (p != q)
-	{
-		p = p->next;
-		q = q->next;
-	}
-
-	return (q);
-}
-
-/**
  * find_loop - search for a possible loop in a single
  * linked list
  *
@@ -42,7 +20,14 @@ const listint_t *find_loop(const listint_t *head)
 		jumping_ptr = jumping_ptr->next->next;
 
 		if (walking_ptr == jumping_ptr)
-			return (find_starting_point(walking_ptr, head));
+		{
+			while (head != walking_ptr)
+			{
+				head = head->next;
+				walking_ptr = walking_ptr->next;
+			}
+			return (walking_ptr);
+		}
 	}
 
 	return (NULL);
