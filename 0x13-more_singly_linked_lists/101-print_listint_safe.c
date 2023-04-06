@@ -2,35 +2,41 @@
 #include <stdio.h>
 
 /**
- * find_loop - search for a possible loop in a single
- * linked list
+ * find_looped_len - search for a possible loop in a single
+ * linked list and return the length if found
  *
  * @head: pointer to the head node
  *
- * Return: pointer to a valid node if a loop was found,
- * NULL otherwise
+ * Return: number of nodes if looped, 0 otherwise
  */
-const listint_t *find_loop(const listint_t *head)
+size_t find_looped_len(const listint_t *head)
 {
+	size_t node_count = 0;
 	const listint_t *walking_ptr = head, *jumping_ptr = head;
+
+	if (!head || !(head->next))
+		return (0);
 
 	while (walking_ptr && jumping_ptr && jumping_ptr->next)
 	{
 		walking_ptr = walking_ptr->next;
 		jumping_ptr = jumping_ptr->next->next;
 
+		node_count++;
+
 		if (walking_ptr == jumping_ptr)
 		{
-			while (head != walking_ptr)
+			while (walking_ptr != head)
 			{
-				head = head->next;
 				walking_ptr = walking_ptr->next;
+				head = head->next;
+
+				node_count++;
 			}
-			return (walking_ptr);
+			return (node_count);
 		}
 	}
-
-	return (NULL);
+	return (0);
 }
 
 /**
@@ -42,28 +48,21 @@ const listint_t *find_loop(const listint_t *head)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t node_count = 0, st_point_found = 0;
-	const listint_t *starting_point;
+	size_t node_count = 0, valid_nodes;
 
 	if (!head)
 		return (0);
 
-	starting_point = find_loop(head);
+	node_count = find_looped_len(head);
 
-	if (starting_point)
+	if (node_count)
 	{
-		while (st_point_found < 2)
+		for (valid_nodes = 0; valid_nodes < node_count; valid_nodes++)
 		{
 			printf("[%p] %d\n", (void *)head, head->n);
-			node_count++;
 			head = head->next;
-			if (head == starting_point)
-			{
-				st_point_found++;
-				if (st_point_found == 2)
-					printf("-> [%p] %d\n", (void *)head, head->n);
-			}
 		}
+		printf("-> [%p] %d\n", (void *)head, head->n);
 	}
 	else
 	{
