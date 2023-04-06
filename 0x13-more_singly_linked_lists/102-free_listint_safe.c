@@ -60,7 +60,6 @@ size_t free_listint_safe(listint_t **h)
 			free(current_node);
 			current_node = temp_node;
 		}
-		*head = NULL;
 	}
 	else
 	{
@@ -71,6 +70,7 @@ size_t free_listint_safe(listint_t **h)
 			current_node = temp_node;
 		}
 	}
+	*h = NULL;
 	h = NULL;
 	return (node_count);
 }
