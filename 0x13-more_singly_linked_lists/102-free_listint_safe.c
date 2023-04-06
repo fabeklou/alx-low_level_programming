@@ -1,17 +1,17 @@
 #include "lists.h"
 
 /**
- * find_looped_size - search for a possible loop in a single
+ * find_looped_list_len - search for a possible loop in a single
  * linked list and return the length if found
  *
  * @head: pointer to the head node
  *
  * Return: number of nodes if looped, 0 otherwise
  */
-size_t find_looped_size(const listint_t *head)
+size_t find_looped_list_len(listint_t *head)
 {
 	size_t node_count = 0;
-	const listint_t *walking_ptr = head, *jumping_ptr = head;
+	listint_t *walking_ptr = head, *jumping_ptr = head;
 
 	if (!head || !(head->next))
 		return (0);
@@ -50,8 +50,8 @@ size_t free_listint_safe(listint_t **h)
 	size_t node_count = 0, valid_node;
 	listint_t *current_node = *h, *temp_node = *h;
 
-	node_count = find_looped_size(*h);
-	
+	node_count = find_looped_list_len(*h);
+
 	*h = NULL;
 
 	if (node_count)
