@@ -51,6 +51,8 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *current_node = *h, *temp_node = *h;
 
 	node_count = find_looped_size(*h);
+	
+	*h = NULL;
 
 	if (node_count)
 	{
@@ -70,7 +72,6 @@ size_t free_listint_safe(listint_t **h)
 			current_node = temp_node;
 		}
 	}
-	*h = NULL;
 	h = NULL;
 	return (node_count);
 }
