@@ -9,6 +9,7 @@
 
 - [Bit Manipulation](https://www.youtube.com/watch?v=7jkIUgLC29I&ab_channel=MakeSchool)
 - [Bitwise Operators](https://www.youtube.com/watch?v=WBim3afbYQw&ab_channel=PortfolioCourses)
+- [Endian Video](https://www.youtube.com/watch?v=JrNF0KRAlyo&ab_channel=MichaelCote) [Endian Article](https://www.geeksforgeeks.org/little-and-big-endian-mystery/)
 
 
 # Learning Objectives
