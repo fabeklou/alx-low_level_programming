@@ -11,35 +11,51 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	unsigned int count = 0;
 	dlistint_t *new = NULL;
 	dlistint_t *curr_ptr = *h;
 
 	if (h == NULL)
 		return (NULL);
 
+	if (idx == 0)
+		return (add_dnodeint(h, n));
+
+	curr_ptr = get_dnodeint_at_index(h, idx);
+
+	if (curr_ptr == NULL)
+		return (NULL);
+
+	if (curr_ptr->next == NULL)
+		return (add_dnodeint_end(h, n));
+
 	new = malloc(sizeof(dlistint_t));
 
 	if (new == NULL)
 		return (NULL);
 
-	if (idx == 0)
-		return (add_dnodeint(h, n));
+	new->n = n;
+	new->next = curr_ptr->next;
+	new->prev = curr_ptr;
+	curr_ptr->next->prev = new;
+	curr_ptr->next = new;
 
-	while (curr_ptr)
-	{
-		curr_ptr = curr_ptr->next;
-		count++;
-		if (count == idx - 1)
-		{
-			new->n = n;
-			new->prev = curr_ptr;
-			new->next = curr_ptr->next;
-			if (curr_ptr->next)
-				(curr_ptr->next)->prev = new;
-			curr_ptr->next = new;
-		}
-	}
+	return (new);
+}
 
-	return (NULL);
+/**
+ * get_dnodeint_at_index - returns a piinter to the node at a given position
+ *
+ * @head: pointer to the head node of the list
+ * @idx: index of the node to return
+ *
+ * Return: address of the corresponding node, or NULL if the node doesn't exist
+ */
+dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int idx)
+{
+	unsigned int i;
+
+	for (i = 0; head != NULL && i <= idx; i++)
+		head = head->next;
+
+	return (head);
 }
