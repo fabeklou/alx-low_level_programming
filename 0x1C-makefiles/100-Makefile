@@ -22,8 +22,8 @@ all: $(NAME)
 main.o: m.h
 
 # Generic rule, produices the object files
-%.o: %.c
-	$(CC) $(CFLAGS)	-c -o $@ $<
+# %.o: %.c
+#	$(CC) $(CFLAGS)	-c -o $@ $<
 
 # Rule used to build the executable
 $(NAME): $(OBJ)
