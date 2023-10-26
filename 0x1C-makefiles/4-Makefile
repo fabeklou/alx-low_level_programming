@@ -18,14 +18,14 @@ all: $(NAME)
 
 # the $(NAME) should always be executed to build the executable
 # `clean` `oclean` `fclean` and `re` should never fail
-.PHONY: $(NAME) clean oclean re
+# .PHONY: $(NAME) clean oclean re
 
 # Makes the main object depends on the header file
-main.o: m.h
+# main.o: m.h
 
 # Generic rule, produices the object files
-%.o: %.c
-	$(CC) $(CFLAGS)	-c -o $@ $<
+# %.o: %.c
+#	$(CC) $(CFLAGS)	-c -o $@ $<
 
 # Rule used to build the executable
 $(NAME): $(OBJ)
