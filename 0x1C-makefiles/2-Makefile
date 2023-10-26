@@ -1,0 +1,27 @@
+# Varibles
+#====================================================================
+# The compiler to be used
+CC=gcc
+# The list of source files
+SRC=main.c school.c
+# Generates one object file for each source file with the same prefix
+OBJ=$(SRC:.c=.o)
+#  The name of the final executable
+NAME=school
+
+# Main rule
+all: $(NAME)
+
+# the $(NAME) should always be executed to build the executable
+.PHONY: $(NAME)
+
+# Makes the main object depends on the header file
+main.o: m.h
+
+# Generic rule, produices the object files
+%.o: %.c
+	$(CC)	-c -o $@ $<
+
+# Rule used to build the executable
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
