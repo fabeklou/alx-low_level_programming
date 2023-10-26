@@ -1,0 +1,10 @@
+# Varibles
+#==================================
+# The compiler to be used
+CC=gcc
+# The list of source files
+SRC=main.c school.c
+
+# Rule used to build the executable
+all: $(SRC)
+	$(CC) $(SRC) -o school
