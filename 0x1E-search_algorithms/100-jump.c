@@ -18,13 +18,10 @@ int jump_search(int *array, size_t size, int value)
 	if (array == NULL || size == 0)
 		return (-1);
 
-	while (array[position] < value)
+	while (position < size && array[position] < value)
 	{
-		if (position > size - 1)
-			break;
 		printf("Value checked array[%ld] = [%d]\n", position, array[position]);
-		if (array[back] <= value && array[position] >= value)
-			break;
+
 		back = position;
 		position += step;
 	}
