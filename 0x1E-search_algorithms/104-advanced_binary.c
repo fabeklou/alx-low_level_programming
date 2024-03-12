@@ -39,20 +39,19 @@ int recursive_binary_search(int *array, size_t left, size_t right, int value)
 {
 	size_t mid = (left + right) / 2;
 
-	if (left > right)
+	if (left > right || (right == 0 && mid == 0 && array[mid] != value))
 		return (-1);
 
 	print_subarray(array, left, right);
 
 	if (value < array[mid])
-		right = mid - 1;
+		right = (mid == 0) ? 0 : mid - 1;
 	else if (value > array[mid])
 		left = mid + 1;
 	else if (value == array[mid] && mid > 0 && value == array[mid - 1])
 		right = mid;
 	else
 		return (mid);
-
 	return (recursive_binary_search(array, left, right, value));
 }
 
