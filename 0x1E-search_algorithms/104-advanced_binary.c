@@ -38,22 +38,21 @@ void print_subarray(int *array, size_t left, size_t right)
 int recursive_binary_search(int *array, size_t left, size_t right, int value)
 {
 	size_t mid = (left + right) / 2;
-	/*printf("%ld - %ld - %ld\n", left, mid, right);*/
-
-	if ((int)right < 0 || (left >= right && array[left] != value))
-		return (-1);
 
 	print_subarray(array, left, right);
 
-	if (value < array[mid])
-		right = mid - 1;
-	else if (value > array[mid])
-		left = mid + 1;
-	else if (value == array[mid] && mid > 0 && value == array[mid - 1])
-		right = mid;
-	else
-		return (mid);
-	return (recursive_binary_search(array, left, right, value));
+	if (array[left] == value)
+		return ((int)left);
+
+	if (array[left] != array[right])
+	{
+		if (array[mid] < value)
+			return (recursive_binary_search(array, mid + 1, right, value));
+		if (array[mid] >= value)
+			return (recursive_binary_search(array, left, mid, value));
+	}
+
+	return (-1);
 }
 
 /**
